@@ -45,7 +45,7 @@ export default class Filters extends React.Component<Props, object> {
         <select multiple={true} id="selectRoutes" value={value} onChange={this.update}>
             {options}
         </select>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Update" />
       </form>
     );
   }

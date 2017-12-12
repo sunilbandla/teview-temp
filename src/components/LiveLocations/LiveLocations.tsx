@@ -1,5 +1,6 @@
 import './LiveLocations.css';
 
+import * as d3 from 'd3';
 import { geoMercator, geoPath } from 'd3-geo';
 import * as React from 'react';
 
@@ -15,6 +16,7 @@ interface Props {
 export default class LiveLocations extends React.Component<Props, object> {
   projection: any;
   pathGenerator: any;
+  tooltipElem: any;
 
   constructor(props: Props, context: any) {
     super(props, context);
@@ -23,12 +25,17 @@ export default class LiveLocations extends React.Component<Props, object> {
     .scale(constants.scale)
     .translate([constants.width / 2, constants.height / 2]);
     this.pathGenerator = geoPath().projection(this.projection);
+    this.tooltipElem = d3.select('body').append('div').style('opacity', 0).style('position', 'absolute');
   }  
 
   onMouseOver = (location: any) => {
     return (event: any) => {
-      // TODO add tooltip with route info
-      
+      this.tooltipElem.transition()
+        .duration(200)
+        .style('opacity', .9);
+      this.tooltipElem.html(`Route: ${location.routeTag}, Vehicle: ${location.id}`)
+        .style('left', '30px')
+        .style('top', '30px');
     };
   }
 
