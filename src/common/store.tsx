@@ -8,7 +8,7 @@ export const initialState: StoreState = {
     selectedRoutes: null
   },
   liveLocations: {
-    lastTime: Date.now() - 15,
+    lastTime: Date.now() - 30,
     locations: []
   }
 };
