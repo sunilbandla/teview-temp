@@ -3,10 +3,8 @@ import { StoreState } from '../common/store-state';
 import * as actions from '../actions/liveLocations';
 import LiveLocations from '../components/LiveLocations/LiveLocations';
 
-export function mapStateToProps({ liveLocations }: StoreState) {
-  return {
-    liveLocations
-  };
+export function mapStateToProps(state: StoreState) {
+  return state;
 }
 
 export function mapDispatchToProps(

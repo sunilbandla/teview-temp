@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import App from './App';
+import { FilterState } from './common/store-state';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
@@ -8,8 +9,11 @@ it('renders without crashing', () => {
     lastTime: 1,
     locations: {}
   };
+  const filters = {
+    selectedRoutes: []
+  } as FilterState;
   ReactDOM.render(
-    <App languageName="TS" enthusiasmLevel={10} liveLocations={liveLocations} />,
+    <App filters={filters} liveLocations={liveLocations} />,
     div
   );
 });

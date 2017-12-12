@@ -27,7 +27,8 @@ export default class LiveLocations extends React.Component<Props, object> {
 
   onMouseOver = (location: any) => {
     return (event: any) => {
-      console.log('over', location, event);
+      // TODO add tooltip with route info
+      
     };
   }
 
@@ -47,7 +48,6 @@ export default class LiveLocations extends React.Component<Props, object> {
             properties: {route: it.routeTag},
             geometry: { type: 'Point', coordinates: [ it.lon, it.lat ] }
           };
-          console.log(feature);
           return (
             <path
               key={'path' + it.id}

@@ -3,13 +3,13 @@ import * as React from 'react';
 import './Map.css';
 import { geoMercator, geoPath } from 'd3-geo';
 import * as constants from '../../common/constants';
-import { StoreState } from '../../common/store-state';
+import { LiveLocationsState } from '../../common/store-state';
 import neighborhoods from '../../data/neighborhoods';
 import freeways from '../../data/freeways';
 import streets from '../../data/streets';
 
-interface Props extends StoreState {
-  changeName?: () => {};
+interface Props {
+  liveLocations: LiveLocationsState;
 }
 
 export default class Map extends React.Component<Props, object> {
@@ -32,7 +32,6 @@ export default class Map extends React.Component<Props, object> {
   }
   
   render() {
-      const { changeName } = this.props;
       return (
         <div>
         <svg
@@ -47,9 +46,6 @@ export default class Map extends React.Component<Props, object> {
             <LiveLocations liveLocations={this.props.liveLocations} />
           </g>
         </svg>
-        <div>
-          <button onClick={changeName}>change name</button>
-        </div>
       </div>
     );
   }

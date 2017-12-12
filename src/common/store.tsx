@@ -1,12 +1,12 @@
 import { createStore, combineReducers } from 'redux';
-import { enthusiasmReducer } from '../reducers/enthusiasmLevel';
-import { languageNameReducer } from '../reducers/languageName';
+import { filtersReducer } from '../reducers/filters';
 import { StoreState } from '../common/store-state';
 import { liveLocationsReducer } from '../reducers/liveLocations';
 
 export const initialState: StoreState = {
-  enthusiasmLevel: 1,
-  languageName: 'TypeScript',
+  filters: {
+    selectedRoutes: null
+  },
   liveLocations: {
     lastTime: Date.now() - 15,
     locations: []
@@ -14,8 +14,7 @@ export const initialState: StoreState = {
 };
 
 const rootReducer = combineReducers<StoreState>({
-  enthusiasmLevel: enthusiasmReducer,
-  languageName: languageNameReducer,
+  filters: filtersReducer,
   liveLocations: liveLocationsReducer,
 });
 

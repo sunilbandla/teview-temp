@@ -1,3 +1,4 @@
+import Filters from './containers/Filters';
 import { StoreState } from './common/store-state';
 import * as React from 'react';
 import './App.css';
@@ -8,12 +9,11 @@ class App extends React.Component<StoreState> {
   render() {
     return (
       <div className="App">
-        <LocationUpdater liveLocations={this.props.liveLocations} />
+        <LocationUpdater filters={this.props.filters} liveLocations={this.props.liveLocations} />
         <Map
-         languageName={this.props.languageName}
-         enthusiasmLevel={this.props.enthusiasmLevel}
          liveLocations={this.props.liveLocations}
         />
+        <Filters filters={this.props.filters} />
       </div>
     );
   }

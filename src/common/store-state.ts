@@ -3,8 +3,11 @@ export interface LiveLocationsState {
   locations: any;
 }
 
+export interface FilterState {
+  selectedRoutes: any[];
+}
+
 export interface StoreState {
-  languageName: string;
-  enthusiasmLevel: number;
+  filters: FilterState;
   liveLocations: LiveLocationsState;
 }

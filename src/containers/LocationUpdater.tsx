@@ -3,10 +3,8 @@ import { StoreState } from '../common/store-state';
 import LocationUpdater from '../components/LocationUpdater/LocationUpdater';
 import * as actions from '../actions/liveLocations';
 
-export function mapStateToProps({ liveLocations }: StoreState) {
-  return {
-    liveLocations,
-  };
+export function mapStateToProps(state: StoreState) {
+  return state;
 }
 
 export function mapDispatchToProps(
