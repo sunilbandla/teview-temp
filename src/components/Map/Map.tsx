@@ -32,10 +32,9 @@ export default class Map extends React.Component<Props, object> {
   }
   
   render() {
-      const { languageName, changeName } = this.props;
+      const { changeName } = this.props;
       return (
-          <div className="hello">
-        <div className="greeting">Map {languageName}</div>
+        <div>
         <svg
           width={constants.width}
           height={constants.height}

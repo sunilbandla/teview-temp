@@ -1,14 +1,14 @@
 import { StoreState } from './common/store-state';
 import * as React from 'react';
 import './App.css';
-import Hello from './containers/Hello';
+import LocationUpdater from './containers/LocationUpdater';
 import Map from './containers/Map';
 
 class App extends React.Component<StoreState> {
   render() {
     return (
       <div className="App">
-        <Hello name={this.props.languageName} enthusiasmLevel={this.props.enthusiasmLevel} />
+        <LocationUpdater liveLocations={this.props.liveLocations} />
         <Map
          languageName={this.props.languageName}
          enthusiasmLevel={this.props.enthusiasmLevel}
